@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TempChat - {{ room_code }}</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="chat-container">
+
+        <!-- Header -->
+
+        <header class="chat-header">
+
+            <div>
+
+                <div class="logo">
+                    💬 TempChat
+                </div>
+
+                <div class="room-info">
+
+                    Room:
+                    <strong>{{ room_code }}</strong>
+
+                </div>
+
+            </div>
+
+            <div class="header-right">
+
+                <div
+                    id="countdown"
+                    class="countdown"
+                >
+                    Loading...
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Share -->
+
+        <div class="share-bar">
+
+            <input
+                type="text"
+                id="room-link"
+                readonly
+            >
+
+            <button
+                onclick="copyRoomLink()"
+                class="copy-button"
+            >
+                Copy Link
+            </button>
+
+        </div>
+
+
+        <!-- Chat -->
+
+        <main
+            id="messages"
+            class="messages"
+        >
+
+            <div class="welcome-message">
+
+                <div class="welcome-icon">
+                    🔒
+                </div>
+
+                <h2>Temporary Room</h2>
+
+                <p>
+                    Messages in this room are temporary.
+                </p>
+
+            </div>
+
+        </main>
+
+
+        <!-- Files -->
+
+        <div
+            id="file-list"
+            class="file-list"
+        >
+        </div>
+
+
+        <!-- Input -->
+
+        <div class="input-area">
+
+            <textarea
+                id="message-input"
+                placeholder="Type a message..."
+                rows="1"
+            ></textarea>
+
+            <label
+                for="file-input"
+                class="file-button"
+                title="Send file"
+            >
+                📎
+            </label>
+
+            <input
+                type="file"
+                id="file-input"
+                hidden
+            >
+
+            <button
+                id="send-button"
+                class="send-button"
+            >
+                Send
+            </button>
+
+        </div>
+
+
+        <!-- User -->
+
+        <div class="user-info">
+
+            You are chatting as:
+
+            <strong>
+                {{ username }}
+            </strong>
+
+        </div>
+
+    </div>
+
+
+    <script>
+
+        const ROOM_CODE = "{{ room_code }}";
+
+        const USERNAME = "{{ username }}";
+
+        const EXPIRES_AT = "{{ expires_at }}";
+
+    </script>
+
+    <script
+        src="{{ url_for('static', filename='script.js') }}"
+    ></script>
+
+</body>
+
+</html>

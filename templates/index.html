@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>TempChat</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='style.css') }}"
+    >
+
+</head>
+
+<body>
+
+    <div class="home-container">
+
+        <div class="logo">
+            💬 TempChat
+        </div>
+
+        <div class="home-card">
+
+            <div class="icon">
+                🔒
+            </div>
+
+            <h1>Temporary Chat</h1>
+
+            <p class="subtitle">
+                Create a temporary chat room and share
+                the room with someone.
+            </p>
+
+            {% if error %}
+
+            <div class="error">
+                {{ error }}
+            </div>
+
+            {% endif %}
+
+            <form
+                action="{{ url_for('create_room') }}"
+                method="POST"
+            >
+
+                <label>Your Name</label>
+
+                <input
+                    type="text"
+                    name="username"
+                    placeholder="Enter your name"
+                    maxlength="30"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="primary-button"
+                >
+                    Create Temporary Room
+                </button>
+
+            </form>
+
+            <div class="info-box">
+
+                <div>⏱️ Room expires after 1 hour</div>
+
+                <div>📎 File sharing supported</div>
+
+                <div>🗑️ Messages are temporary</div>
+
+                <div>🔗 Share the room URL</div>
+
+            </div>
+
+        </div>
+
+        <p class="footer">
+            TempChat • Simple Temporary Messaging
+        </p>
+
+    </div>
+
+</body>
+
+</html>

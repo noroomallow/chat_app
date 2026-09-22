@@ -1,0 +1,603 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        linear-gradient(
+            135deg,
+            #071a1f,
+            #102c33,
+            #061013
+        );
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+
+/* =========================
+   HOME
+========================= */
+
+.home-container {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 20px;
+}
+
+
+.logo {
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    margin-bottom: 25px;
+
+}
+
+
+.home-card {
+
+    width: 100%;
+
+    max-width: 450px;
+
+    background: rgba(255,255,255,0.08);
+
+    border: 1px solid rgba(255,255,255,0.12);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    backdrop-filter: blur(15px);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,0.4);
+
+}
+
+
+.icon {
+
+    width: 65px;
+
+    height: 65px;
+
+    background: rgba(0,255,180,0.12);
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 30px;
+
+    margin: auto;
+
+}
+
+
+.home-card h1 {
+
+    text-align: center;
+
+    margin-top: 20px;
+
+}
+
+
+.subtitle {
+
+    text-align: center;
+
+    color: #b7c7ca;
+
+    line-height: 1.6;
+
+    margin: 10px 0 25px;
+
+}
+
+
+label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #cbd8da;
+
+}
+
+
+input,
+textarea {
+
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    background: rgba(255,255,255,0.08);
+
+    color: white;
+
+    border-radius: 10px;
+
+    padding: 13px;
+
+    font-size: 15px;
+
+}
+
+
+input::placeholder,
+textarea::placeholder {
+
+    color: #8ea1a5;
+
+}
+
+
+.primary-button {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 14px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #16c79a;
+
+    color: #061013;
+
+    font-weight: bold;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+}
+
+
+.primary-button:hover {
+
+    background: #25e0af;
+
+}
+
+
+.info-box {
+
+    margin-top: 25px;
+
+    padding: 15px;
+
+    background: rgba(0,0,0,0.18);
+
+    border-radius: 12px;
+
+    line-height: 2;
+
+    color: #b9c8ca;
+
+    font-size: 14px;
+
+}
+
+
+.error {
+
+    background: rgba(255,60,60,0.15);
+
+    color: #ff9d9d;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.footer {
+
+    margin-top: 20px;
+
+    color: #8fa3a6;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-container {
+
+    max-width: 900px;
+
+    height: 100vh;
+
+    margin: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    background: rgba(0,0,0,0.25);
+
+}
+
+
+.chat-header {
+
+    min-height: 75px;
+
+    padding: 15px 20px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.chat-header .logo {
+
+    margin: 0;
+
+    font-size: 20px;
+
+}
+
+
+.room-info {
+
+    color: #9fb2b5;
+
+    font-size: 13px;
+
+}
+
+
+.room-info strong {
+
+    color: #16c79a;
+
+}
+
+
+.countdown {
+
+    background: rgba(255,180,0,0.12);
+
+    color: #ffd166;
+
+    padding: 8px 12px;
+
+    border-radius: 8px;
+
+    font-size: 13px;
+
+}
+
+
+/* =========================
+   SHARE
+========================= */
+
+.share-bar {
+
+    padding: 10px 15px;
+
+    display: flex;
+
+    gap: 8px;
+
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+
+}
+
+
+.share-bar input {
+
+    flex: 1;
+
+}
+
+
+.copy-button {
+
+    border: none;
+
+    border-radius: 9px;
+
+    padding: 0 15px;
+
+    background: #243f45;
+
+    color: white;
+
+    cursor: pointer;
+
+}
+
+
+/* =========================
+   MESSAGES
+========================= */
+
+.messages {
+
+    flex: 1;
+
+    overflow-y: auto;
+
+    padding: 20px;
+
+}
+
+
+.message {
+
+    margin-bottom: 15px;
+
+    max-width: 75%;
+
+}
+
+
+.message.mine {
+
+    margin-left: auto;
+
+}
+
+
+.message-name {
+
+    font-size: 12px;
+
+    color: #16c79a;
+
+    margin-bottom: 4px;
+
+}
+
+
+.message-bubble {
+
+    display: inline-block;
+
+    padding: 11px 14px;
+
+    border-radius: 14px;
+
+    background: #1b363c;
+
+    word-wrap: break-word;
+
+}
+
+
+.message.mine .message-bubble {
+
+    background: #126b59;
+
+}
+
+
+.message-time {
+
+    font-size: 10px;
+
+    color: #829699;
+
+    margin-top: 4px;
+
+}
+
+
+/* =========================
+   FILES
+========================= */
+
+.file-list {
+
+    max-height: 150px;
+
+    overflow-y: auto;
+
+}
+
+
+.file-card {
+
+    margin: 8px 15px;
+
+    padding: 10px;
+
+    border-radius: 10px;
+
+    background: rgba(255,255,255,0.06);
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+.file-card a {
+
+    color: #16c79a;
+
+    text-decoration: none;
+
+}
+
+
+/* =========================
+   INPUT
+========================= */
+
+.input-area {
+
+    padding: 12px;
+
+    display: flex;
+
+    gap: 8px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+}
+
+
+.input-area textarea {
+
+    flex: 1;
+
+    resize: none;
+
+}
+
+
+.file-button {
+
+    width: 45px;
+
+    height: 45px;
+
+    margin: 0;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    background: #243f45;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+}
+
+
+.send-button {
+
+    border: none;
+
+    border-radius: 10px;
+
+    padding: 0 20px;
+
+    background: #16c79a;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.user-info {
+
+    padding: 8px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    color: #829699;
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .home-card {
+
+        padding: 25px;
+
+    }
+
+    .chat-header {
+
+        padding: 12px;
+
+    }
+
+    .chat-header .logo {
+
+        font-size: 17px;
+
+    }
+
+    .countdown {
+
+        font-size: 11px;
+
+    }
+
+    .share-bar {
+
+        padding: 8px;
+
+    }
+
+    .copy-button {
+
+        padding: 0 10px;
+
+    }
+
+    .message {
+
+        max-width: 90%;
+
+    }
+
+}
